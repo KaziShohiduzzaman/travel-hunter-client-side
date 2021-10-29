@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 const Header = () => {
     const { logOut, user } = useAuth();
     return (
-        <div>
+        <>
             <Navbar className="bg-color" expand="lg" sticky="top">
                 <Container>
                     <Navbar.Brand href="/">
@@ -29,13 +29,13 @@ const Header = () => {
                             {
                                 user?.email &&
                                 <Nav.Link href="/myPlans" className='animate__animated animate__bounceInRight'>
-                                    <Link className='text-white text-decoration-none user-name' to="/myPlans">Plans</Link>
+                                    <Link className='text-white text-decoration-none user-name' to="/myPlans">My Events</Link>
                                 </Nav.Link>
                             }
                             {
                                 user?.email &&
                                 <Nav.Link href="/allPlans" className='animate__animated animate__bounceInRight'>
-                                    <Link className='text-white text-decoration-none user-name' to="/allPlans">All plans</Link>
+                                    <Link className='text-white text-decoration-none user-name' to="/allPlans">All Events</Link>
                                 </Nav.Link>
                             }
                             {
@@ -68,7 +68,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div >
+        </ >
 
     );
 };

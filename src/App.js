@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './contexts/authProvider';
+import Booking from './components/Home/Booking/Booking';
 function App() {
   return (
     <div>
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path='/login'>
               <Login></Login>
+            </Route>
+            <Route path="/booking/:serviceId">
+              <Booking></Booking>
             </Route>
             <Route path='*'>
               <NotFound></NotFound>

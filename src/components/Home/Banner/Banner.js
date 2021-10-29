@@ -6,11 +6,11 @@ import banner2 from '../../../images/banner2.png';
 import banner3 from '../../../images/banner3.png'
 const Banner = () => {
     return (
-        <div>
+        <div className='w-100'>
             <Carousel fade>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block img-fluid"
                         src={banner3}
                         alt="First slide"
                     />
@@ -21,7 +21,7 @@ const Banner = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block img-fluid"
                         src={banner2}
                         alt="Second slide"
                     />
@@ -33,7 +33,7 @@ const Banner = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block img-fluid"
                         src={banner1}
                         alt="Third slide"
                     />

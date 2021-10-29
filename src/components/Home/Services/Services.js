@@ -10,7 +10,7 @@ const Services = () => {
             .then(data => setEvents(data))
     })
     return (
-        <div>
+        <div className='container my-4 w-100'>
             <p className='text-center p-4 text-color-services'>Available Tour</p>
 
             <Row xs={1} md={3} className="g-4">

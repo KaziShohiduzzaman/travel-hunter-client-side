@@ -4,7 +4,7 @@ import notFound from '../../images/404-Page.gif'
 const NotFound = () => {
     return (
         <div>
-            <img src={notFound} alt="" />
+            <img className='img-fluid w-100' src={notFound} alt="" />
         </div>
     );
 };
