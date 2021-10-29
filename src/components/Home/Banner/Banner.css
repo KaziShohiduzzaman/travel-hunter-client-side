@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Permanent+Marker&display=swap');
+.text-style{
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    background-color: #632ced6b;
+    padding: 20px;
+}

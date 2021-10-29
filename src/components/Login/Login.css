@@ -1,0 +1,24 @@
+.login-container{
+    height: 300px;
+}
+.parent {
+    background: lightyellow;
+    position: relative;
+}
+.child {
+    background: #622CED;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-evenly;
+}
+.login-header{
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+    
