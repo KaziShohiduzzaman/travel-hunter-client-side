@@ -1,7 +1,7 @@
 .footer-bg{
     background-color: black;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
 }
 .footer-section{
     margin-top: 50px;
@@ -18,4 +18,16 @@
 }
 .img-sized{
     height: 100px;
+}
+.footer-font-style{
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+}
+.footer-set{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-set img{
+    height: 70px;
 }

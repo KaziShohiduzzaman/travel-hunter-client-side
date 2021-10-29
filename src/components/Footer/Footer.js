@@ -5,11 +5,10 @@ import logo2 from '../../images/logo.png'
 const Footer = () => {
     return (
         <div className='footer-bg'>
-            <Row>
+            <Row className='px-5'>
                 <Col xs={12} md={4}>
                     <div className='footer-section'>
-                        <img className='img-fluid img-sized' src={logo2} alt="" />
-                        <p>All locations are open. Please come in at your actual appointment time. According to the latest from NYS and the CDC, masks are mandatory in the building & during exam. If you are a current patient and have an emergency, doctors are available 24/7.
+                        <p className='footer-font-style'>All locations are open. Please come in at your actual appointment time. According to the latest from NYS and the CDC, masks are mandatory in the building & during exam. If you are a current visitor and have an emergency, admins are available 24/7.
                             Simply call 585-394-2020.</p>
                     </div>
 
@@ -32,8 +31,9 @@ const Footer = () => {
                     </div>
                 </Col>
             </Row>
-            <div style={{ backgroundColor: '#622CED' }} className='py-3 text-white text-center'>
-                <p className='text-white mt-2'>All credit goes to <span className='text-white'>Kazi Shohiduzzaman</span></p>
+            <div style={{ backgroundColor: '#622CED' }} className='py-3 text-white text-center footer-set'>
+                <p className='text-white mt-2'>All credit goes to <span className='text-danger'>Kazi Shohiduzzaman</span></p>
+                <img className='img-fluid img-sized' src={logo2} alt="" />
             </div>
 
         </div>
