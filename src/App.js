@@ -8,6 +8,9 @@ import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './contexts/authProvider';
 import Booking from './components/Home/Booking/Booking';
+import ManageAllEvents from './components/ManageAllEvents/ManageAllEvents';
+import AddTour from './components/AddTour/AddTour';
+import MyEvent from './components/MyEvent/MyEvent';
 function App() {
   return (
     <div>
@@ -23,6 +26,15 @@ function App() {
             </Route>
             <Route path='/login'>
               <Login></Login>
+            </Route>
+            <Route path='/allPlans'>
+              <ManageAllEvents></ManageAllEvents>
+            </Route>
+            <Route path='/addTour'>
+              <AddTour></AddTour>
+            </Route>
+            <Route path='/myPlans'>
+              <MyEvent></MyEvent>
             </Route>
             <Route path="/booking/:serviceId">
               <Booking></Booking>

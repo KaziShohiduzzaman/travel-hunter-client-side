@@ -15,7 +15,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='text-style'>“Do not follow where the path may lead. Go instead where there is no path and leave a trail” – Ralph Waldo Emerson
+                        <h3 className='text-style'><strong>“Do not follow where the path may lead. Go instead where there is no path and leave a trail” – Ralph Waldo Emerson</strong>
                         </h3>
                     </Carousel.Caption>
                 </Carousel.Item>

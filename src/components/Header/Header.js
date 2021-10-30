@@ -35,7 +35,7 @@ const Header = () => {
                             {
                                 user?.email &&
                                 <Nav.Link href="/allPlans" className='animate__animated animate__bounceInRight'>
-                                    <Link className='text-white text-decoration-none user-name' to="/allPlans">All Events</Link>
+                                    <Link className='text-white text-decoration-none user-name' to="/allPlans">Manage Events</Link>
                                 </Nav.Link>
                             }
                             {
@@ -51,7 +51,7 @@ const Header = () => {
 
                             {user?.email ?
                                 <Nav.Link className='animate__animated animate__bounceInRight'>
-                                    <a className='text-warning text-decoration-none text-danger' onClick={logOut} href="/login">Log Out</a>
+                                    <a className='text-warning text-decoration-none text-danger fw-bold' onClick={logOut} href="/login">Log Out</a>
                                 </Nav.Link>
                                 :
                                 <Nav.Link href="/login" className='animate__animated animate__bounceInRight'>
