@@ -85,12 +85,12 @@ const Booking = () => {
                         <div>
                             <h3 className='text-center p-4 text-color-services'>Registration</h3>
                             <form onSubmit={handleSubmit}>
-                                <input ref={refUserName} type="text" name="" id="" placeholder="Name" value={user.displayName || ''} />
-                                <input ref={refEmail} type="email" name="" id="" placeholder='Email' value={user.email || ''} />
-                                <input onChange={handlePersonChange} type="number" name="" id="" placeholder='Total Person' />
-                                <input onChange={handlePhoneNumberChange} type="number" name="" id="" placeholder='Phone Number' />
-                                <input onChange={handleDurationChange} type="number" name="" id="" placeholder='Travel Duration' />
-                                <input type="submit" value="Register" />
+                                <input className='input-place' ref={refUserName} type="text" placeholder="Name" value={user.displayName || ''} />
+                                <input className='input-place' ref={refEmail} type="email" placeholder='Email' value={user.email || ''} />
+                                <input className='input-place' onChange={handlePersonChange} type="number" placeholder='Total Person' />
+                                <input className='input-place' onChange={handlePhoneNumberChange} type="number" placeholder='Phone Number' />
+                                <input className='input-place' onChange={handleDurationChange} type="number" placeholder='Travel Duration' />
+                                <input className='input-place btn-submit' type="submit" value="Register" />
                             </form>
                         </div>
                     </Col>
@@ -101,17 +101,3 @@ const Booking = () => {
 };
 
 export default Booking;
-
-{/* <form onSubmit={handleSubmit(onSubmit)}>
-                                <input className='input-place' {...register("name", { required: true, maxLength: 20 })} placeholder='Name' value={user?.displayName || ''} />
-
-                                <input className='input-place' {...register("email")} placeholder='Email' value={user?.email || ''} />
-
-                                <input className='input-place' type="number" {...register("totalPerson")} placeholder='Total Person' />
-
-                                <input className='input-place' type="number" {...register("phoneNumber")} placeholder='Phone No' />
-
-                                <input className='input-place'  type="number" {...register("duration")} placeholder='Travel Duration' />
-
-                                <input className='input-place btn-submit' type="submit" />
-                            </form> */}

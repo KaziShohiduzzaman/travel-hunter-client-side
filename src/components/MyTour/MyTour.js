@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
-const MyTour = ({ event }) => {
-    const { placeName, eventPerson, eventPhone, eventDuration, userName, userEmail } = event;
-    console.log(event);
+const MyTour = (props) => {
+    const { _id, placeName, eventPerson, eventPhone, eventDuration, userName, userEmail } = props.event;
+
     return (
         <div>
             <Col>
@@ -16,7 +16,7 @@ const MyTour = ({ event }) => {
                         <p>Tour Duration : {eventDuration} days</p>
                         {/* <p>Status: {status}</p> */}
                         <p>Phone Number: {eventPhone}</p>
-                        <button className='card-button cancel-button'>Cancel Tour</button>
+                        <button onClick={() => props.handleDeleteTour(_id)} className='card-button cancel-button'>Cancel Tour</button>
                     </Card.Body>
                 </Card>
             </Col>

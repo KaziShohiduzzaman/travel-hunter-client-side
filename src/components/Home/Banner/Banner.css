@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .text-style{
     font-family: 'Lobster', cursive;
-    font-size: 40px;
-    color: black;
+    font-size: 30px;
+    color: white;
     font-weight: bold;
     padding: 20px;
-    text-shadow: 2px 2px white;
+    text-shadow: 2px 2px #622CED;
 }

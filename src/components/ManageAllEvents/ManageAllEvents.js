@@ -11,40 +11,41 @@ const ManageAllEvents = () => {
     }, [])
     //delete or cancel a tour
     const handleDeleteTour = id => {
-        console.log(id);
-        const url = `http://localhost:5000/orders/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Cancel Plan Successfully');
-                    const remainingUsers = orders.filter(order => order._id !== id);
-                    setOrders(remainingUsers);
-                }
+        const proceed = window.confirm('Are you sure Want to delete');
+        if (proceed) {
+            const url = `http://localhost:5000/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        alert('Cancel Plan Successfully');
+                        const remainingUsers = orders.filter(order => order._id !== id);
+                        setOrders(remainingUsers);
+                    }
+                })
+        }
     }
     return (
         <div className='container my-4'>
-
-            {
-                //for spinner
-                orders.length === 0 ?
-                    <Spinner className='d-block mx-auto my-4' animation="border" variant="danger" />
-                    :
-                    <div>
-                        <h1 className='text-center p-4 text-color-services'>Manage All Plans</h1>
+            <div>
+                <h1 className='text-center p-4 text-color-services'>Manage All Plans</h1>
+                {
+                    orders.length ?
                         <Row xs={1} md={2} className="g-4 my-3">
                             {
                                 orders.map(order => <AllEvent key={order._id} order={order} handleDeleteTour={handleDeleteTour}></AllEvent>)
                             }
                         </Row>
-                    </div>
-            }
+                        :
+                        <h3 className="text-danger text-center">Opps!! You have not
+                            <br />
 
+                            registered single Travel Plan yet </h3>
+                }
 
-
+            </div>
         </div>
 
     )
