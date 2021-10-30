@@ -23,14 +23,15 @@ const AddTour = () => {
     };
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='input-place' {...register("name", { required: true, maxLength: 20 })} placeholder="Enter Place Name" />
+            <h2 className='text-center p-4 text-color-services'>Add a visit place name</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="input-main my-4">
+                <input className='inputStyle' {...register("name", { required: true, maxLength: 20 })} placeholder="Enter Place Name" />
 
-                <textarea className='input-place' {...register("description")} placeholder="Short Description" />
+                <textarea className='textarea-input' {...register("description")} placeholder="Short Description" />
 
-                <input className='input-place' {...register("img")} placeholder='Img Link' />
+                <input className='inputStyle' {...register("img")} placeholder='Img Link' />
 
-                <input type="Submit" />
+                <input className='inputStyle submit-btn' type="Submit" />
             </form>
         </div>
     );

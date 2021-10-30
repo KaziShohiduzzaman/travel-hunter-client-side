@@ -15,6 +15,12 @@
 }
 .user-name-main{
     background-color: rgba(248, 248, 244, 0.185);
-    padding: 10px;
+    padding: 7px;
     border-radius: 20px 0px 20px 0px;
+}
+.nav-button{
+    border: none;
+    background-color: rgb(240, 54, 54);
+    color: white;
+    border-radius: 10px;
 }
