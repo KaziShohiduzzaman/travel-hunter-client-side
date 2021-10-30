@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Spinner } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import AllEvent from '../AllEvent/AllEvent';
 import './ManageAllEvents.css'
 const ManageAllEvents = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://lit-cove-75583.herokuapp.com/events')
             .then(res => res.json())
             .then(result => setOrders(result))
     }, [])
@@ -13,7 +13,7 @@ const ManageAllEvents = () => {
     const handleDeleteTour = id => {
         const proceed = window.confirm('Are you sure Want to delete');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

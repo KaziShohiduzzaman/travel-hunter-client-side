@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router';
-import { useForm } from "react-hook-form";
 import './Booking.css'
 import useAuth from '../../../Hooks/useAuth';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -15,7 +14,7 @@ const Booking = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/events/${serviceId}`;
+        const url = `https://lit-cove-75583.herokuapp.com/events/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setEvent(data))
@@ -51,7 +50,7 @@ const Booking = () => {
 
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://lit-cove-75583.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

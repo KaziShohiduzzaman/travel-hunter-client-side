@@ -10,7 +10,7 @@ const MyEvent = () => {
 
     useEffect(() => {
         <Spinner animation="border" />;
-        fetch('http://localhost:5000/orders')
+        fetch('https://lit-cove-75583.herokuapp.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
@@ -22,7 +22,7 @@ const MyEvent = () => {
     const handleDeleteTour = id => {
         const proceed = window.confirm('Are you sure Want to delete');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

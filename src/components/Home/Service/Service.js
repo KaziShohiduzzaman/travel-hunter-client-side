@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Service.css'
 const Service = ({ event }) => {
-    const { _id,name, img, description } = event;
+    const { _id, name, img, description } = event;
     return (
         <div>
             <Col>

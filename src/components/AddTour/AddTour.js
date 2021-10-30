@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 const AddTour = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/events', {
+        fetch('https://lit-cove-75583.herokuapp.com/events', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
