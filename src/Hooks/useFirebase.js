@@ -10,12 +10,7 @@ const useFirebase = () => {
     const auth = getAuth();
 
     const signInWithGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user)
-                console.log(user);
-            })
-
+        return signInWithPopup(auth, googleProvider)
     }
     const logOut = () => {
         signOut(auth).then(() => {
@@ -40,7 +35,8 @@ const useFirebase = () => {
         logOut,
         signInWithGoogle,
         user,
-        error
+        error,
+        setError
     }
 }
 export default useFirebase;

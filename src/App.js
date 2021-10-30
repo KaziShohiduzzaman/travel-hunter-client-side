@@ -11,6 +11,7 @@ import Booking from './components/Home/Booking/Booking';
 import ManageAllEvents from './components/ManageAllEvents/ManageAllEvents';
 import AddTour from './components/AddTour/AddTour';
 import MyEvent from './components/MyEvent/MyEvent';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div>
@@ -27,18 +28,18 @@ function App() {
             <Route path='/login'>
               <Login></Login>
             </Route>
-            <Route path='/allPlans'>
+            <PrivateRoute path='/allPlans'>
               <ManageAllEvents></ManageAllEvents>
-            </Route>
-            <Route path='/addTour'>
+            </PrivateRoute>
+            <PrivateRoute path='/addTour'>
               <AddTour></AddTour>
-            </Route>
-            <Route path='/myPlans'>
+            </PrivateRoute>
+            <PrivateRoute path='/myPlans'>
               <MyEvent></MyEvent>
-            </Route>
-            <Route path="/booking/:serviceId">
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
