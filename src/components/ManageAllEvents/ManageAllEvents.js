@@ -5,7 +5,7 @@ import './ManageAllEvents.css'
 const ManageAllEvents = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('https://lit-cove-75583.herokuapp.com/events')
+        fetch('https://lit-cove-75583.herokuapp.com/orders')
             .then(res => res.json())
             .then(result => setOrders(result))
     }, [])

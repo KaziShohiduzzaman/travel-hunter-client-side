@@ -10,7 +10,7 @@ const MyEvent = () => {
 
     useEffect(() => {
         <Spinner animation="border" />;
-        fetch('https://lit-cove-75583.herokuapp.com/events')
+        fetch('https://lit-cove-75583.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
