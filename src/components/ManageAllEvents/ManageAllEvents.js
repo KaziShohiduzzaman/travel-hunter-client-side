@@ -7,7 +7,7 @@ const ManageAllEvents = () => {
     const [status, setStatus] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://lit-cove-75583.herokuapp.com/orders')
             .then(res => res.json())
             .then(result => setOrders(result))
     }, [status, orders])
@@ -15,7 +15,7 @@ const ManageAllEvents = () => {
     const handleDeleteTour = id => {
         const proceed = window.confirm('Are you sure Want to Cancel?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -32,7 +32,7 @@ const ManageAllEvents = () => {
     // Update status 
     const handleStatus = id => {
         setStatus(!status);
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
