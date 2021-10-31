@@ -10,7 +10,7 @@ const MyEvent = () => {
 
     useEffect(() => {
         <Spinner animation="border" />;
-        fetch('https://lit-cove-75583.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
@@ -20,9 +20,9 @@ const MyEvent = () => {
 
     //Delete tour
     const handleDeleteTour = id => {
-        const proceed = window.confirm('Are you sure Want to delete');
+        const proceed = window.confirm('Are you sure Want to Cancel?');
         if (proceed) {
-            const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -39,18 +39,19 @@ const MyEvent = () => {
 
     return (
         <div className="container">
-            <h1 class="text-center p-4 text-color-services mb-3">Your Selected Event</h1>
-            {matchEvents.length ?
-                <Row xs={1} md={3} lg={3} className='gy-4 my-4'>
-                    {matchEvents.map(event => <MyTour key={event._key} event={event} handleDeleteTour={handleDeleteTour}></MyTour>)}
-                </Row>
-                :
-                <h3 className="text-danger text-center">Opps!! You have not
-                    <br />
+            <div>
+                <h1 class="text-center p-4 text-color-services mb-3">Your Selected Event</h1>
+                {matchEvents.length ?
+                    <Row xs={1} md={3} lg={3} className='gy-4 my-4'>
+                        {matchEvents.map(event => <MyTour key={event._key} event={event} handleDeleteTour={handleDeleteTour}></MyTour>)}
+                    </Row>
+                    :
+                    <h3 className="text-danger text-center">Opps!! You have not
+                        <br />
 
-                    registered single Travel Plan yet </h3>
-            }
-
+                        registered single Travel Plan yet </h3>
+                }
+            </div>
         </div>
     );
 };

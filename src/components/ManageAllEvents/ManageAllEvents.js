@@ -4,16 +4,18 @@ import AllEvent from '../AllEvent/AllEvent';
 import './ManageAllEvents.css'
 const ManageAllEvents = () => {
     const [orders, setOrders] = useState([]);
+    const [status, setStatus] = useState(false);
+
     useEffect(() => {
-        fetch('https://lit-cove-75583.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(result => setOrders(result))
-    }, [])
+    }, [status, orders])
     //delete or cancel a tour
     const handleDeleteTour = id => {
-        const proceed = window.confirm('Are you sure Want to delete');
+        const proceed = window.confirm('Are you sure Want to Cancel?');
         if (proceed) {
-            const url = `https://lit-cove-75583.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -27,6 +29,27 @@ const ManageAllEvents = () => {
                 })
         }
     }
+    // Update status 
+    const handleStatus = id => {
+        setStatus(!status);
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Status updated Successfully')
+                }
+                else {
+                    alert('Already Approved')
+                }
+            })
+    }
     return (
         <div className='container my-4'>
             <div>
@@ -35,7 +58,7 @@ const ManageAllEvents = () => {
                     orders.length ?
                         <Row xs={1} md={2} className="g-4 my-3">
                             {
-                                orders.map(order => <AllEvent key={order._id} order={order} handleDeleteTour={handleDeleteTour}></AllEvent>)
+                                orders.map(order => <AllEvent key={order._id} order={order} handleDeleteTour={handleDeleteTour} handleStatus={handleStatus}></AllEvent>)
                             }
                         </Row>
                         :
@@ -44,7 +67,6 @@ const ManageAllEvents = () => {
 
                             registered single Travel Plan yet </h3>
                 }
-
             </div>
         </div>
 
